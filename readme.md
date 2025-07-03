@@ -1,6 +1,23 @@
-# Imersão DevOps - Alura Google Cloud
+# Imersão DevOps - Alura Google Cloud (Com Adaptações)
 
-Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e matrículas em uma instituição de ensino.
+Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e matrículas em uma instituição de ensino. Ele foi originalmente desenvolvido durante a **Imersão DevOps da Alura**, e esta versão inclui **modificações e incrementos pessoais**, com o objetivo de aprofundar o aprendizado e torná-lo parte do meu portfólio.
+
+##  Sobre este repositório
+
+A base do projeto (arquivos principais da aplicação e banco de dados) foi mantida conforme fornecida pela Alura:
+
+- `app.py`
+- `database.py`
+- `models.py`
+- `schemas.py`
+- `requirements.txt`
+- Banco de dados SQLite (`escola.db`)
+
+As seguintes modificações e melhorias foram adicionadas por mim:
+
+- Criação de um **`Dockerfile`** para containerização da aplicação.
+- Inclusão de um **`docker-compose.yml`** para facilitar a orquestração do ambiente.
+- Ajustes no `README.md` para refletir as alterações e facilitar a execução com Docker.
 
 ## Pré-requisitos
 
@@ -8,47 +25,46 @@ Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e
 - [Git](https://git-scm.com/downloads)
 - [Docker](https://www.docker.com/get-started/)
 
-## Passos para subir o projeto
+##  Executando com Docker (opcional e recomendado)
 
-1. **Faça o download do repositório:**
-   [Clique aqui para realizar o download](https://github.com/guilhermeonrails/imersao-devops/archive/refs/heads/main.zip)
+docker-compose up --build
+Acesse: http://localhost:8000/docs
 
-2. **Crie um ambiente virtual:**
-   ```sh
-   python3 -m venv ./venv
-   ```
 
-3. **Ative o ambiente virtual:**
-   - No Linux/Mac:
-     ```sh
-     source venv/bin/activate
-     ```
-   - No Windows:
-     ```sh
-     venv\Scripts\activate
-     ```
+1. **Clone este repositório:**
 
-4. **Instale as dependências:**
-   ```sh
-   pip install -r requirements.txt
-   ```
+sh
+Copy
+Edit
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 
-5. **Execute a aplicação:**
-   ```sh
-   uvicorn app:app --reload
-   ```
+2. **Crie e ative o ambiente virtual:**
+sh
+Copy
+Edit
+python3 -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
 
-6. **Acesse a documentação interativa:**
+3. **Instale as dependências:**
+sh
+Copy
+Edit
+pip install -r requirements.txt
 
-   Abra o navegador e acesse:  
-   [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-   Aqui você pode testar todos os endpoints da API de forma interativa.
+4. **Execute a aplicação:**
+sh
+Copy
+Edit
+uvicorn app:app --reload
+5. **Acesse a documentação interativa:**
+http://127.0.0.1:8000/docs
 
 ---
 
 ## Estrutura do Projeto
-
+## Mantido como o da **Alura**
 - `app.py`: Arquivo principal da aplicação FastAPI.
 - `models.py`: Modelos do banco de dados (SQLAlchemy).
 - `schemas.py`: Schemas de validação (Pydantic).
